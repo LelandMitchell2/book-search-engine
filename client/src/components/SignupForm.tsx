@@ -36,6 +36,7 @@ const SignupForm = ({}: { handleModalClose: () => void }) => {
     }
 
     try {
+      console.log("troubleshooting");
       const { data } = await addUser({ variables: { input: {...userFormData} } } ); 
       const token = data?.createUser?.token
       Auth.login(token)
@@ -52,7 +53,7 @@ const SignupForm = ({}: { handleModalClose: () => void }) => {
     });
   };
 
-  return (
+return (
     <>
       {/* This is needed for the validation functionality above */}
       <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
@@ -105,6 +106,7 @@ const SignupForm = ({}: { handleModalClose: () => void }) => {
           variant='success'>
           Submit
         </Button>
+        
       </Form>
       { error && <div>{error.message}</div>}
       { data && <div>working</div>}
