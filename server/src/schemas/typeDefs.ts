@@ -1,3 +1,5 @@
+
+// This is the typeDefs file for the GraphQL schema.
 const typeDefs = `
 type User {
     _id: String
